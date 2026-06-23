@@ -1,4 +1,4 @@
-function knightMoves(start, end, moves = 0, path = []) {
+function knightMoves(start, end) {
 
     const moves = [
         [2, 1], [-2, 1], [2, -1], [-2, -1],
@@ -26,7 +26,7 @@ function knightMoves(start, end, moves = 0, path = []) {
             }
             queue.push(currentPathMove);        
     }
-    
+
     }
     
     
