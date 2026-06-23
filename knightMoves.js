@@ -18,10 +18,11 @@ function knightMoves(start, end) {
     while (queue.length > 0) {
 
         const currentPath = queue.shift();
-        for (move in moves) {   
+        for (move of moves) {   
             const currentPathMove = currentPath.push(move);
             
-            if (currentPathMove[currentPathMove.length - 1] === end) {
+            const currentSquare = currentPathMove[currentPathMove.length - 1]
+            if (currentSquare[0] === end[0] && currentSquare[1] === end[1]) {
                 return currentPathMove;
             }
             queue.push(currentPathMove);        
