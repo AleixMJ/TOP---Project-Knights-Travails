@@ -21,6 +21,10 @@ function knightMoves(start, end) {
         for (move of moves) {
             const moveX = currentPath[currentPath.length -1][0] + move[0];
             const moveY = currentPath[currentPath.length -1][1] + move[1];
+            if (moveX > 7 || moveX <0 || moveY > 7 || moveY < 0) {
+                continue
+            }
+
             const currentPathMove = [...currentPath, [moveX, moveY]]
            
             
