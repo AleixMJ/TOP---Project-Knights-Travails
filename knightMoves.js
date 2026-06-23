@@ -7,13 +7,8 @@ function knightMoves(start, end) {
 
     const queue = [[start]];
 
-    // ensure a previous visited position within the path is not added again to a path.
-
     const visited = new Set();
     visited.add(start.toString());
-
-    // Add path of moves to the queue
-    // if a path reaches the end position return the path combination
 
     while (queue.length > 0) {
 
@@ -26,10 +21,10 @@ function knightMoves(start, end) {
             }
 
             const currentSquare = [moveX, moveY]
-            if (visited.has(currentSquare)) continue;
+            if (visited.has(currentSquare.toString())) continue;
 
-            const currentPathMove = [...currentPath, [currentSquare]]
-            visited.add(currentSquare);                   
+            const currentPathMove = [...currentPath, currentSquare];
+            visited.add(currentSquare.toString());                   
             
             
             if (currentSquare[0] === end[0] && currentSquare[1] === end[1]) {
